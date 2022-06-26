@@ -111,7 +111,7 @@ int answer_calculator(int d, int anchor_month_day, int anchor_year) {
 
 int main() {
 	int y = 0;
-	while (y < 1600 || y > 2299 || y == '\n') {
+	while (y < 1600 || y > 2299) {
 		printf("Enter a year (1600 - 2299): ");
 		scanf("%d", &y);
 	}
@@ -128,8 +128,8 @@ int main() {
 	days[5] = "Friday";
 	days[6] = "Saturday";
 	
-	int m = 13;
-	while (m < 1 || m > 12 || m == '\n') {
+	int m = 0;
+	while (m < 1 || m > 12) {
 		printf("Enter a month (1 - 12): ");
 		scanf("%d", &m);
 	}
@@ -138,7 +138,7 @@ int main() {
 	bool leap_year = is_leap_year(y);
 	int anchor_month_day = anchor_month_day_calculator(m, leap_year);
 	int d = 0;
-	while (d < 1 || d > 31 || d == '\n' || !(is_valid_day_of_the_month(m, d, leap_year))) {
+	while (d < 1 || d > 31 || !(is_valid_day_of_the_month(m, d, leap_year))) {
 		printf("Enter a day: ");
 		scanf("%d", &d);
 	}
