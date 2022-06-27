@@ -94,7 +94,7 @@ bool is_valid_day_of_the_month(int m, int d, bool is_leap_year) {
 		if (d > 30) {
 			is_valid = false;
 		}
-		else if ((d > 29 && is_leap_year) || (d > 28 && !(is_leap_year))) {
+		else if ((m == 1 && d > 29 && is_leap_year) || (m == 1 && d > 28 && !(is_leap_year))) {
 			is_valid = false;
 		}
 	}
